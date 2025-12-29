@@ -1,89 +1,98 @@
 import { Link } from 'react-router-dom'
-import PageHeader from '../../components/PageHeader'
-import CTABanner from '../../components/CTABanner'
 
 // Import images
-import sensoriThumb from '../../assets/produzione/imgi_4_sensori_di_livello_thumb.webp'
-import cablaggiThumb from '../../assets/produzione/imgi_5_cablaggi_elettrici_thumb.webp'
-import quadriThumb from '../../assets/produzione/imgi_6_quadri_elettrici_thumb.webp'
-import sondeThumb from '../../assets/produzione/imgi_7_sonde_di_temperatura_thumb.webp'
+import sensoriImg from '../../assets/produzione/imgi_4_sensori_di_livello_thumb.webp'
+import cablaggiImg from '../../assets/produzione/imgi_5_cablaggi_elettrici_thumb.webp'
+import quadriImg from '../../assets/produzione/imgi_6_quadri_elettrici_thumb.webp'
+import sondeImg from '../../assets/produzione/imgi_7_sonde_di_temperatura_thumb.webp'
+import headerImg from '../../assets/produzione/imgi_10_1300x900-prodotti.webp'
 
 export default function ProdottiIndex() {
   const products = [
     {
       title: 'Sensori di livello carburante',
-      description: 'Tecnologia capacitiva di alta precisione per la misurazione del livello carburante. Disponibili in versione tubolare e a piastra, con uscita analogica o digitale (CANbus).',
-      features: ['Tecnologia capacitiva', 'Alta precisione', 'Resistenza alle vibrazioni'],
+      description: 'Tecnologia capacitiva di alta precisione per la misurazione del livello carburante in ogni condizione operativa.',
       path: '/prodotti/sensori-livello-carburante',
-      image: sensoriThumb
+      image: sensoriImg,
+      features: ['Tecnologia capacitiva', 'Alta precisione ±1%', 'Output CANbus']
     },
     {
       title: 'Cablaggi elettrici',
-      description: 'Soluzioni su misura per ogni applicazione industriale. Progettazione e produzione di cablaggi completi con connettori, terminali e protezioni specifiche.',
-      features: ['Su misura', 'Ogni settore industriale', 'Qualità certificata'],
+      description: 'Soluzioni su misura per ogni applicazione industriale, dalla semplice terminazione a sistemi complessi.',
       path: '/prodotti/cablaggi-elettrici',
-      image: cablaggiThumb
+      image: cablaggiImg,
+      features: ['100% personalizzati', 'Qualità certificata', 'Codesign']
     },
     {
       title: 'Quadri elettrici',
-      description: 'Centraline e pannelli di controllo per applicazioni industriali. Assemblaggio completo di schede elettroniche, cablaggi interni e collaudo funzionale.',
-      features: ['Centraline di controllo', 'Pannelli operatore', 'Collaudo funzionale'],
+      description: 'Centraline e pannelli di controllo per applicazioni industriali con collaudo funzionale al 100%.',
       path: '/prodotti/quadri-elettrici',
-      image: quadriThumb
+      image: quadriImg,
+      features: ['Centraline controllo', 'Pannelli operatore', 'Collaudo 100%']
     },
     {
       title: 'Sonde di temperatura',
-      description: 'Sensori per la misurazione precisa della temperatura in ogni condizione operativa. Disponibili con diverse tecnologie e configurazioni per ogni esigenza.',
-      features: ['Alta precisione', 'Diverse configurazioni', 'Ambienti gravosi'],
+      description: 'Misurazione precisa della temperatura con diverse tecnologie: NTC, PTC, termocoppie, Pt100.',
       path: '/prodotti/sonde-temperatura',
-      image: sondeThumb
+      image: sondeImg,
+      features: ['NTC/PTC', 'Termocoppie', 'Pt100/Pt1000']
     },
   ]
 
   return (
     <>
-      <PageHeader
-        title="Prodotti"
-        subtitle="Quattro linee di prodotto progettate e realizzate interamente in Italia, con la massima attenzione alla qualità e all'innovazione tecnologica."
-        breadcrumbs={[{ label: 'Prodotti' }]}
-      />
+      {/* Hero */}
+      <section className="hero" style={{ minHeight: '70vh' }}>
+        <div className="hero-media">
+          <img src={headerImg} alt="Prodotti Mont.El" />
+        </div>
+        <div className="hero-overlay" />
 
-      <section className="py-20 lg:py-32 bg-black">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="hero-content container text-center">
+          <p className="text-caption text-accent mb-6">Prodotti</p>
+          <h1 className="text-display">
+            Soluzioni per l'industria
+          </h1>
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="section bg-black">
+        <div className="container">
+          <div className="max-w-3xl">
+            <p className="text-body-lg text-muted">
+              Quattro linee di prodotto progettate e realizzate interamente in Italia, con la massima attenzione alla qualità e all'innovazione tecnologica. Dal 1979, ogni componente che esce dai nostri stabilimenti rappresenta l'eccellenza del Made in Italy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Grid */}
+      <section className="bg-black pb-32">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             {products.map((product, index) => (
-              <Link
-                key={index}
-                to={product.path}
-                className="group bg-white/[0.02] border border-white/10 hover:border-white/30 transition-all"
-              >
-                <div className="aspect-video overflow-hidden bg-white/5">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+              <Link key={index} to={product.path} className="card group relative">
+                <div className="card-image aspect-[4/3]">
+                  <img src={product.image} alt={product.title} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 </div>
-                <div className="p-8">
-                  <h2 className="text-2xl font-medium text-white mb-4 group-hover:text-white/80 transition-colors">
-                    {product.title}
-                  </h2>
-                  <p className="text-white/50 mb-4">
-                    {product.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {product.features.map((feature, i) => (
-                      <span key={i} className="px-3 py-1 bg-white/5 text-white/60 text-xs">
+                      <span key={i} className="text-xs text-accent/80 px-2 py-1 border border-accent/30">
                         {feature}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center gap-2 text-white/50 group-hover:text-white/70 transition-colors">
-                    <span>Scopri di più</span>
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <h2 className="text-title text-white mb-3">{product.title}</h2>
+                  <p className="text-body text-muted mb-6 max-w-md">{product.description}</p>
+                  <span className="btn btn-ghost inline-flex items-center gap-2 group-hover:border-white">
+                    Scopri di più
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </div>
+                  </span>
                 </div>
               </Link>
             ))}
@@ -91,54 +100,22 @@ export default function ProdottiIndex() {
         </div>
       </section>
 
-      {/* Perché sceglierci */}
-      <section className="py-20 lg:py-32 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest text-white/50 mb-4">Perché sceglierci</p>
-            <h2 className="text-3xl md:text-4xl font-light text-white">
-              I vantaggi dei nostri prodotti
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/10 flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-medium text-white mb-3">Qualità certificata</h3>
-              <p className="text-white/50 text-sm">
-                Tutti i nostri prodotti sono realizzati secondo gli standard ISO 9001 e IATF 16949.
+      {/* CTA */}
+      <section className="section bg-white text-black">
+        <div className="container">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div>
+              <h2 className="text-headline mb-4">Hai bisogno di un prodotto personalizzato?</h2>
+              <p className="text-body-lg text-black/60 max-w-xl">
+                Il nostro team tecnico è a disposizione per sviluppare soluzioni su misura per le tue esigenze specifiche.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/10 flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-medium text-white mb-3">Personalizzazione</h3>
-              <p className="text-white/50 text-sm">
-                Ogni prodotto può essere personalizzato per rispondere alle esigenze specifiche del cliente.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-white/10 flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-medium text-white mb-3">Tempi rapidi</h3>
-              <p className="text-white/50 text-sm">
-                Capacità produttiva flessibile per garantire consegne puntuali anche su grandi volumi.
-              </p>
-            </div>
+            <Link to="/contatti" className="btn btn-primary !bg-black !text-white hover:!bg-[#c8ff00] hover:!text-black shrink-0">
+              Contattaci
+            </Link>
           </div>
         </div>
       </section>
-
-      <CTABanner title="Hai bisogno di un prodotto personalizzato?" />
     </>
   )
 }

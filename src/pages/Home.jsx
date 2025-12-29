@@ -1,223 +1,137 @@
 import { Link } from 'react-router-dom'
 
 // Import images
-import teamAzienda from '../assets/sviluppo ad hoc/imgi_2_2500x900-azienda.webp'
-import sensoriThumb from '../assets/produzione/imgi_4_sensori_di_livello_thumb.webp'
-import cablaggiThumb from '../assets/produzione/imgi_5_cablaggi_elettrici_thumb.webp'
-import quadriThumb from '../assets/produzione/imgi_6_quadri_elettrici_thumb.webp'
-import sondeThumb from '../assets/produzione/imgi_7_sonde_di_temperatura_thumb.webp'
-import qualitaImg from '../assets/apparechciature e cablaggi/imgi_22_qualita_1.webp'
+import heroImg from '../assets/sviluppo ad hoc/imgi_2_2500x900-azienda.webp'
+import sensoriImg from '../assets/produzione/imgi_4_sensori_di_livello_thumb.webp'
+import cablaggiImg from '../assets/produzione/imgi_5_cablaggi_elettrici_thumb.webp'
+import quadriImg from '../assets/produzione/imgi_6_quadri_elettrici_thumb.webp'
+import sondeImg from '../assets/produzione/imgi_7_sonde_di_temperatura_thumb.webp'
+import aziendaImg from '../assets/sviluppo ad hoc/imgi_8_1300x900-azienda.webp'
 import settoriImg from '../assets/settori applicazione/imgi_7_magricole2.webp'
-import caseHistorySensori from '../assets/case history/imgi_4_sensori_di_livello_thumb_case.webp'
-import caseHistoryCablaggi from '../assets/case history/imgi_5_cablaggi_elettrici_thumb_case.webp'
-import caseHistoryQuadri from '../assets/case history/imgi_6_quadri_elettrici_thumb_case.webp'
+import qualitaImg from '../assets/apparechciature e cablaggi/imgi_22_qualita_1.webp'
 
 export default function Home() {
   const products = [
     {
-      title: 'Sensori di livello carburante',
-      description: 'Tecnologia capacitiva di alta precisione',
+      title: 'Sensori di livello',
+      subtitle: 'Tecnologia capacitiva',
       path: '/prodotti/sensori-livello-carburante',
-      image: sensoriThumb
+      image: sensoriImg
     },
     {
       title: 'Cablaggi elettrici',
-      description: 'Soluzioni su misura per ogni applicazione',
+      subtitle: 'Soluzioni su misura',
       path: '/prodotti/cablaggi-elettrici',
-      image: cablaggiThumb
+      image: cablaggiImg
     },
     {
       title: 'Quadri elettrici',
-      description: 'Centraline e pannelli di controllo',
+      subtitle: 'Controllo e potenza',
       path: '/prodotti/quadri-elettrici',
-      image: quadriThumb
+      image: quadriImg
     },
     {
-      title: 'Sonde di temperatura',
-      description: 'Misurazione precisa in ogni condizione',
+      title: 'Sonde temperatura',
+      subtitle: 'Precisione assoluta',
       path: '/prodotti/sonde-temperatura',
-      image: sondeThumb
+      image: sondeImg
     },
   ]
 
-  const sectors = [
-    'Macchine movimento terra',
-    'Macchine agricole',
-    'Generatori',
-    'Veicoli industriali',
-    'Automotive',
-    'Nautica',
-    'Ferroviario'
-  ]
-
-  const caseHistories = [
-    { title: 'Sensori di livello carburante', category: 'Sensori', path: '/case-history/sensori-livello-carburante', image: caseHistorySensori },
-    { title: 'Cablaggi elettrici', category: 'Cablaggi', path: '/case-history/cablaggi-elettrici', image: caseHistoryCablaggi },
-    { title: 'Quadri elettrici', category: 'Quadri', path: '/case-history/quadri-elettrici', image: caseHistoryQuadri },
+  const stats = [
+    { value: '1979', label: 'Anno di fondazione' },
+    { value: '45+', label: 'Anni di esperienza' },
+    { value: '7', label: 'Settori industriali' },
+    { value: '3', label: 'Certificazioni ISO' },
   ]
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center bg-black">
-        <div className="absolute inset-0 grid-bg opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black" />
+      {/* HERO - Centered */}
+      <section className="hero">
+        <div className="hero-media">
+          <img src={heroImg} alt="Mont.El Team" />
+        </div>
+        <div className="hero-overlay" />
+        <div className="grid-lines" />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 lg:px-8 text-center">
-          <p className="text-sm uppercase tracking-widest text-white/50 mb-6">Dal 1979</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+        <div className="hero-content container text-center">
+          <p className="text-caption text-accent mb-6">Electronic Wiring Equipment</p>
+          <h1 className="text-display mb-8 mx-auto">
             Life in a wire
           </h1>
-          <p className="text-lg md:text-xl text-white/60 mb-8 max-w-3xl mx-auto">
-            Progettazione e produzione di sensori di livello carburante, cablaggi elettrici, quadri elettrici e sonde di temperatura per l'industria.
+          <p className="text-body-lg text-muted max-w-2xl mx-auto mb-10">
+            Dal 1979 progettiamo e produciamo componenti elettronici per i settori industriali più esigenti.
           </p>
-
-          {/* Ambiti sintetici */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <span className="px-4 py-2 border border-white/20 text-white/70 text-sm">Sensori capacitivi</span>
-            <span className="px-4 py-2 border border-white/20 text-white/70 text-sm">Cablaggi su misura</span>
-            <span className="px-4 py-2 border border-white/20 text-white/70 text-sm">Quadri elettrici</span>
-            <span className="px-4 py-2 border border-white/20 text-white/70 text-sm">Sonde temperatura</span>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contatti" className="btn-primary">
-              Richiedi informazioni
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link to="/prodotti" className="btn btn-primary">
+              Esplora i prodotti
             </Link>
-            <Link to="/azienda" className="btn-secondary">
+            <Link to="/azienda" className="btn btn-outline">
               Scopri l'azienda
             </Link>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="w-6 h-10 border border-white/30 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse" />
-          </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          <span className="text-caption text-muted">Scroll</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent" />
         </div>
       </section>
 
-      {/* CHI SIAMO - Teaser */}
-      <section className="py-20 lg:py-32 bg-black">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-sm uppercase tracking-widest text-white/50 mb-4">Chi siamo</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6">
-                Oltre 45 anni di esperienza nell'elettronica industriale
-              </h2>
-              <p className="text-white/60 text-lg mb-6">
-                Mont.El è specializzata nella progettazione e produzione di componenti elettronici ed elettromeccanici destinati ai settori più esigenti dell'industria.
-              </p>
-              <p className="text-white/60 mb-8">
-                Con sede a Sale Marasino (BS), dal 1979 offriamo soluzioni personalizzate che combinano qualità, innovazione e affidabilità per soddisfare le esigenze dei nostri clienti in tutto il mondo.
-              </p>
-              <Link to="/azienda" className="btn-primary">
-                Scopri l'azienda
-              </Link>
-            </div>
-            <div className="aspect-video overflow-hidden border border-white/10">
-              <img
-                src={teamAzienda}
-                alt="Team Mont.El in riunione"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* LIFE IN A WIRE - Video */}
-      <section className="py-20 lg:py-32 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
-          <p className="text-sm uppercase tracking-widest text-white/50 mb-4">Life in a wire</p>
-          <h2 className="text-3xl md:text-4xl font-light text-white mb-6">
-            La nostra passione per l'eccellenza
-          </h2>
-          <p className="text-white/60 max-w-2xl mx-auto mb-12">
-            Scopri come trasformiamo le idee in soluzioni concrete, dalla progettazione alla produzione.
-          </p>
-          <div className="aspect-video bg-white/5 border border-white/10 flex items-center justify-center max-w-4xl mx-auto">
-            <span className="text-white/30">[Video aziendale]</span>
-          </div>
-        </div>
-      </section>
-
-      {/* PRODOTTI */}
-      <section className="py-20 lg:py-32 bg-black">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      {/* PRODUCTS GRID */}
+      <section className="section bg-black">
+        <div className="container">
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest text-white/50 mb-4">Prodotti</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6">
-              Soluzioni per ogni esigenza industriale
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              Quattro linee di prodotto progettate e realizzate interamente in Italia, con la massima attenzione alla qualità e all'innovazione tecnologica.
+            <p className="text-caption text-accent mb-4">Prodotti</p>
+            <h2 className="text-headline mb-6">Soluzioni industriali</h2>
+            <p className="text-body-lg text-muted max-w-2xl mx-auto">
+              Quattro linee di prodotto progettate e realizzate interamente in Italia.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
             {products.map((product, index) => (
-              <Link
-                key={index}
-                to={product.path}
-                className="group bg-white/[0.02] border border-white/10 p-8 hover:border-white/30 transition-all"
-              >
-                <div className="aspect-square mb-6 overflow-hidden bg-white/5">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+              <Link key={index} to={product.path} className="card group">
+                <div className="card-image aspect-[4/5]">
+                  <img src={product.image} alt={product.title} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 </div>
-                <h3 className="text-lg font-medium text-white group-hover:text-white/80 transition-colors">
-                  {product.title}
-                </h3>
-                <p className="text-white/50 text-sm mt-2">{product.description}</p>
-                <div className="flex items-center gap-2 mt-4 text-white/50 text-sm group-hover:text-white/70">
-                  <span>Scopri</span>
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                  <p className="text-caption text-accent mb-2">{product.subtitle}</p>
+                  <h3 className="text-title text-white">{product.title}</h3>
                 </div>
               </Link>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/prodotti" className="btn-secondary">
+            <Link to="/prodotti" className="btn btn-outline">
               Tutti i prodotti
             </Link>
           </div>
         </div>
       </section>
 
-      {/* QUALITÀ */}
-      <section className="py-20 lg:py-32 bg-[#f1f0ea]">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="aspect-video overflow-hidden border border-black/10 order-2 lg:order-1">
-              <img
-                src={qualitaImg}
-                alt="Controllo qualità Mont.El"
-                className="w-full h-full object-cover"
-              />
+      {/* ABOUT - Split Layout Balanced */}
+      <section className="section-lg bg-black">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={aziendaImg} alt="Stabilimento Mont.El" className="w-full h-full object-cover" />
+              </div>
             </div>
             <div className="order-1 lg:order-2">
-              <p className="text-sm uppercase tracking-widest text-black/50 mb-4">Qualità certificata</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-[#010101] mb-6">
-                Eccellenza garantita da certificazioni internazionali
+              <p className="text-caption text-accent mb-6">Chi siamo</p>
+              <h2 className="text-headline mb-8">
+                Eccellenza italiana dal 1979
               </h2>
-              <p className="text-black/60 text-lg mb-6">
-                Il nostro Sistema di Gestione Qualità è certificato secondo gli standard più rigorosi del settore.
+              <p className="text-body-lg text-muted mb-8">
+                Mont.El è specializzata nella progettazione e produzione di componenti elettronici ed elettromeccanici. Con sede a Sale Marasino (BS), serviamo clienti in tutto il mondo.
               </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-3 py-1 bg-black/10 text-black/70 text-sm">ISO 9001</span>
-                <span className="px-3 py-1 bg-black/10 text-black/70 text-sm">IATF 16949</span>
-                <span className="px-3 py-1 bg-black/10 text-black/70 text-sm">ISO 14001</span>
-              </div>
-              <Link to="/qualita" className="btn-primary !bg-[#010101] !text-white !border-[#010101] hover:!bg-transparent hover:!text-[#010101]">
+              <Link to="/azienda" className="btn btn-primary">
                 Scopri di più
               </Link>
             </div>
@@ -225,102 +139,103 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SETTORI DI APPLICAZIONE */}
-      <section className="py-20 lg:py-32 bg-black">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* STATS - Centered */}
+      <section className="section bg-brand-blue">
+        <div className="container">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="stat-number text-white">{stat.value}</div>
+                <div className="stat-label text-white/60 mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTORS - Split Layout Balanced */}
+      <section className="section-lg bg-black">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div>
-              <p className="text-sm uppercase tracking-widest text-white/50 mb-4">Settori di applicazione</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6">
-                Soluzioni per ogni industria
+              <p className="text-caption text-accent mb-6">Settori</p>
+              <h2 className="text-headline mb-8">
+                Dove operiamo
               </h2>
-              <p className="text-white/60 text-lg mb-8">
+              <p className="text-body-lg text-muted mb-8">
                 I nostri prodotti trovano applicazione nei settori industriali più esigenti, dove affidabilità e precisione sono requisiti fondamentali.
               </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                {sectors.map((sector, index) => (
-                  <span key={index} className="px-4 py-2 border border-white/20 text-white/70 text-sm">
+              <div className="flex flex-wrap gap-3 mb-10">
+                {['Movimento terra', 'Agricoltura', 'Automotive', 'Nautica', 'Ferroviario'].map((sector, i) => (
+                  <span key={i} className="px-4 py-2 border border-white/20 text-sm text-white/70">
                     {sector}
                   </span>
                 ))}
               </div>
-              <Link to="/settori" className="btn-primary">
+              <Link to="/settori" className="btn btn-primary">
                 Esplora i settori
               </Link>
             </div>
-            <div className="aspect-video overflow-hidden border border-white/10">
-              <img
-                src={settoriImg}
-                alt="Macchina agricola - settore di applicazione Mont.El"
-                className="w-full h-full object-cover"
-              />
+            <div>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={settoriImg} alt="Settori di applicazione" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CASE HISTORY */}
-      <section className="py-20 lg:py-32 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-widest text-white/50 mb-4">Case history</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6">
-              Progetti realizzati con successo
-            </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
-              Scopri come abbiamo aiutato i nostri clienti a raggiungere i loro obiettivi con soluzioni personalizzate e innovative.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {caseHistories.map((item, index) => (
-              <Link
-                key={index}
-                to={item.path}
-                className="group bg-white/[0.02] border border-white/10 hover:border-white/30 transition-all"
-              >
-                <div className="aspect-video overflow-hidden bg-white/5">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+      {/* QUALITY - Split Section White */}
+      <section className="section bg-white text-black">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="aspect-square overflow-hidden">
+                <img src={qualitaImg} alt="Qualità Mont.El" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="text-caption text-brand-red mb-6">Qualità</p>
+              <h2 className="text-headline mb-8">
+                Certificazioni internazionali
+              </h2>
+              <p className="text-body-lg text-black/60 mb-8">
+                Il nostro Sistema di Gestione Qualità è certificato secondo gli standard più rigorosi.
+              </p>
+              <div className="flex gap-8 mb-10">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-brand-blue">ISO</div>
+                  <div className="text-sm text-black/50">9001</div>
                 </div>
-                <div className="p-6">
-                  <span className="text-xs uppercase tracking-wider text-white/40">{item.category}</span>
-                  <h3 className="text-lg font-medium text-white group-hover:text-white/80 mt-2">
-                    {item.title}
-                  </h3>
-                  <div className="flex items-center gap-2 mt-4 text-white/50 text-sm group-hover:text-white/70">
-                    <span>Leggi</span>
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-brand-blue">IATF</div>
+                  <div className="text-sm text-black/50">16949</div>
                 </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-brand-blue">ISO</div>
+                  <div className="text-sm text-black/50">14001</div>
+                </div>
+              </div>
+              <Link to="/qualita" className="btn btn-primary !bg-brand-blue !text-white hover:!bg-brand-red">
+                Scopri di più
               </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link to="/case-history" className="btn-secondary">
-              Tutte le case history
-            </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA FINALE */}
-      <section className="py-20 lg:py-32 bg-black border-t border-white/10">
-        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6">
-            Hai un progetto in mente?
+      {/* CTA - Centered */}
+      <section className="section-lg bg-black relative overflow-hidden">
+        <div className="grid-lines" />
+        <div className="container relative z-10 text-center">
+          <h2 className="text-headline mb-8">
+            Inizia il tuo progetto
           </h2>
-          <p className="text-white/60 text-lg mb-8">
-            Contattaci per scoprire come possiamo aiutarti a realizzare la tua idea con soluzioni su misura.
+          <p className="text-body-lg text-muted max-w-2xl mx-auto mb-10">
+            Contattaci per scoprire come possiamo supportare le tue esigenze con soluzioni personalizzate e di alta qualità.
           </p>
-          <Link to="/contatti" className="btn-primary">
-            Richiedi informazioni
+          <Link to="/contatti" className="btn btn-primary">
+            Contattaci ora
           </Link>
         </div>
       </section>

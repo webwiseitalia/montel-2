@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 export default function PageHeader({ title, breadcrumbs = [], subtitle = '' }) {
   return (
     <section className="bg-black py-20 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="container">
         {/* Breadcrumbs */}
         {breadcrumbs.length > 0 && (
           <nav className="mb-6">
-            <ul className="flex items-center gap-2 text-sm text-white/50">
+            <ul className="flex items-center justify-center gap-2 text-sm text-white/50">
               <li>
                 <Link to="/" className="hover:text-white transition-colors">Home</Link>
               </li>
@@ -15,7 +15,7 @@ export default function PageHeader({ title, breadcrumbs = [], subtitle = '' }) {
                 <li key={index} className="flex items-center gap-2">
                   <span>/</span>
                   {crumb.path ? (
-                    <Link to={crumb.path} className="hover:text-white transition-colors">
+                    <Link to={crumb.path} className="hover:text-accent transition-colors">
                       {crumb.label}
                     </Link>
                   ) : (
@@ -28,13 +28,13 @@ export default function PageHeader({ title, breadcrumbs = [], subtitle = '' }) {
         )}
 
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        <h1 className="text-display text-white text-center">
           {title}
         </h1>
 
         {/* Subtitle */}
         {subtitle && (
-          <p className="text-lg text-white/60 mt-6 max-w-3xl">
+          <p className="text-body-lg text-muted mt-6 max-w-3xl mx-auto text-center">
             {subtitle}
           </p>
         )}
