@@ -44,7 +44,7 @@ export default function ProdottiIndex() {
       {/* Hero */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="hero-media">
-          <img src={headerImg} alt="Prodotti Mont.El" />
+          <img src={headerImg} alt="Prodotti Mont.El" title="Prodotti Mont.El - Soluzioni per l'industria" width="1300" height="900" />
         </div>
         <div className="hero-overlay" />
 
@@ -74,7 +74,7 @@ export default function ProdottiIndex() {
             {products.map((product, index) => (
               <Link key={index} to={product.path} className="card group relative">
                 <div className="card-image aspect-[4/3]">
-                  <img src={product.image} alt={product.title} />
+                  <img src={product.image} alt={product.title} title={product.title} loading="lazy" width="800" height="600" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">

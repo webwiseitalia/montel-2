@@ -54,7 +54,7 @@ export default function Settori() {
       {/* Hero */}
       <section className="hero" style={{ minHeight: '70vh' }}>
         <div className="hero-media">
-          <img src={headerImg} alt="Settori di applicazione" />
+          <img src={headerImg} alt="Settori di applicazione" title="Settori di applicazione Mont.El" width="2500" height="900" />
         </div>
         <div className="hero-overlay" />
 
@@ -91,7 +91,7 @@ export default function Settori() {
             {settori.map((settore, index) => (
               <div key={index} className="card group relative">
                 <div className="card-image aspect-[4/3]">
-                  <img src={settore.image} alt={settore.name} />
+                  <img src={settore.image} alt={settore.name} title={settore.name} loading="lazy" width="800" height="600" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">

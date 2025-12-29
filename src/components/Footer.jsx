@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Logo & Info */}
           <div className="lg:col-span-4 footer-animate animate-on-scroll">
             <Link to="/" className="inline-block mb-8 hover:opacity-80 transition-opacity duration-300">
-              <img src={logoImg} alt="Mont.El" className="h-10 w-auto" />
+              <img src={logoImg} alt="Mont.El" title="Mont.El S.r.l." loading="lazy" width="120" height="40" className="h-10 w-auto" />
             </Link>
             <p className="text-body text-muted mb-8 max-w-sm">
               Dal 1979 progettiamo e produciamo componenti elettronici per i settori industriali più esigenti.
@@ -132,12 +132,12 @@ export default function Footer() {
             © {currentYear} Mont.El S.r.l. — P.IVA 10695790153
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-muted hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="text-xs text-muted hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-xs text-muted hover:text-white transition-colors">
+            </Link>
+            <Link to="/cookie-policy" className="text-xs text-muted hover:text-white transition-colors">
               Cookie Policy
-            </a>
+            </Link>
             <a
               href="https://linkedin.com"
               target="_blank"

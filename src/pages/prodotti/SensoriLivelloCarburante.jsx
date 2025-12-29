@@ -69,6 +69,10 @@ export default function SensoriLivelloCarburante() {
                 <img
                   src={sensoriImg}
                   alt="Sensori di livello carburante Mont.El"
+                  title="Sensori di livello carburante Mont.El"
+                  loading="lazy"
+                  width="800"
+                  height="450"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -116,6 +120,10 @@ export default function SensoriLivelloCarburante() {
                   <img
                     src={sensoriCase}
                     alt="Sensore di livello carburante installato su veicolo"
+                    title="Sensore di livello carburante installato su veicolo"
+                    loading="lazy"
+                    width="800"
+                    height="450"
                     className="w-full h-full object-cover"
                   />
                 </div>

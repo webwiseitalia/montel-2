@@ -74,6 +74,10 @@ export default function SondeTemperatura() {
                 <img
                   src={sondeImg}
                   alt="Sonde di temperatura Mont.El"
+                  title="Sonde di temperatura Mont.El"
+                  loading="lazy"
+                  width="800"
+                  height="450"
                   className="w-full h-full object-cover"
                 />
               </div>

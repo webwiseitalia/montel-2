@@ -70,7 +70,7 @@ export default function Home() {
       {/* HERO - Centered */}
       <section className="hero">
         <div className="hero-media">
-          <img src={heroImg} alt="Mont.El Team" />
+          <img src={heroImg} alt="Mont.El Team" title="Team Mont.El - Eccellenza italiana dal 1979" width="2500" height="900" />
         </div>
         <div className="hero-overlay" />
         <div className="grid-lines" />
@@ -115,7 +115,7 @@ export default function Home() {
             {products.map((product, index) => (
               <Link key={index} to={product.path} className={`card group animate-on-scroll delay-${index + 1}`}>
                 <div className="card-image aspect-[4/5]">
-                  <img src={product.image} alt={product.title} />
+                  <img src={product.image} alt={product.title} title={product.title} loading="lazy" width="400" height="500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
@@ -140,7 +140,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="order-2 lg:order-1 animate-scale-on-scroll">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={aziendaImg} alt="Stabilimento Mont.El" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img src={aziendaImg} alt="Stabilimento Mont.El" title="Stabilimento Mont.El a Sale Marasino" loading="lazy" width="1300" height="900" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -202,7 +202,7 @@ export default function Home() {
             </div>
             <div className="animate-scale-on-scroll">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={settoriImg} alt="Settori di applicazione" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img src={settoriImg} alt="Settori di applicazione" title="Settori di applicazione Mont.El" loading="lazy" width="800" height="600" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="order-2 lg:order-1 animate-scale-on-scroll">
               <div className="aspect-square overflow-hidden">
-                <img src={qualitaImg} alt="Qualità Mont.El" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img src={qualitaImg} alt="Qualità Mont.El" title="Sistema Qualità Mont.El certificato" loading="lazy" width="800" height="800" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
               </div>
             </div>
             <div className="order-1 lg:order-2">

@@ -80,6 +80,10 @@ export default function QuadriElettrici() {
                 <img
                   src={quadriImg}
                   alt="Quadri elettrici Mont.El"
+                  title="Quadri elettrici Mont.El"
+                  loading="lazy"
+                  width="800"
+                  height="450"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -124,6 +128,10 @@ export default function QuadriElettrici() {
                 <img
                   src={quadriCase}
                   alt="Dettaglio quadro elettrico Mont.El"
+                  title="Dettaglio quadro elettrico Mont.El"
+                  loading="lazy"
+                  width="800"
+                  height="450"
                   className="w-full h-full object-cover"
                 />
               </div>

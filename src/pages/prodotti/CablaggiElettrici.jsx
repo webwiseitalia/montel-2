@@ -82,6 +82,10 @@ export default function CablaggiElettrici() {
                 <img
                   src={cablaggiImg}
                   alt="Cablaggi elettrici Mont.El"
+                  title="Cablaggi elettrici Mont.El"
+                  loading="lazy"
+                  width="800"
+                  height="450"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -128,6 +132,10 @@ export default function CablaggiElettrici() {
                 <img
                   src={cablaggiProduzione}
                   alt="Linea di produzione cablaggi Mont.El"
+                  title="Linea di produzione cablaggi Mont.El"
+                  loading="lazy"
+                  width="800"
+                  height="450"
                   className="w-full h-full object-cover"
                 />
               </div>

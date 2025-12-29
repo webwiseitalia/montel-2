@@ -5,6 +5,8 @@ import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
 import Settori from './pages/Settori'
 import Contatti from './pages/Contatti'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import CookiePolicy from './pages/CookiePolicy'
 
 // Azienda
 import AziendaIndex from './pages/azienda/index'
@@ -73,6 +75,8 @@ function App() {
         <Route path="/sostenibilita" element={<SostenibilitaIndex />} />
         <Route path="/sostenibilita/etichettatura-ambientale" element={<EtichettaturaAmbientale />} />
         <Route path="/contatti" element={<Contatti />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
       </Route>
     </Routes>
   )

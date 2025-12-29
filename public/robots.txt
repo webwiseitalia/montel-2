@@ -1,0 +1,19 @@
+# Robots.txt for Mont.El S.r.l.
+# https://www.montel.it
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.montel.it/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /admin/
+
+# Allow all crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

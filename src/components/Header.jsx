@@ -45,7 +45,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
             <Link to="/" className="relative z-50 flex items-center gap-3">
-              <img src={logoImg} alt="Mont.El" className="h-8 lg:h-10 w-auto" />
+              <img src={logoImg} alt="Mont.El" title="Mont.El - Electronic Wiring Equipment" width="120" height="40" className="h-8 lg:h-10 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}

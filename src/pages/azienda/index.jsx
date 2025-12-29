@@ -32,7 +32,7 @@ export default function AziendaIndex() {
       {/* Hero */}
       <section className="hero" style={{ minHeight: '80vh' }}>
         <div className="hero-media">
-          <img src={heroImg} alt="Team Mont.El" />
+          <img src={heroImg} alt="Team Mont.El" title="Team Mont.El - Eccellenza italiana" width="2500" height="900" />
         </div>
         <div className="hero-overlay" />
 
@@ -80,7 +80,7 @@ export default function AziendaIndex() {
       {/* Image Section */}
       <section className="image-section">
         <div className="image-section-bg">
-          <img src={aziendaImg} alt="Stabilimento Mont.El" />
+          <img src={aziendaImg} alt="Stabilimento Mont.El" title="Stabilimento Mont.El" loading="lazy" width="1300" height="900" />
         </div>
         <div className="image-section-overlay" />
 
