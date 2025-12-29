@@ -1,119 +1,80 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Section from './components/Section'
-import TextBlock from './components/TextBlock'
-import Grid from './components/Grid'
-import Card from './components/Card'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import MainLayout from './layouts/MainLayout'
+
+// Pages
+import Home from './pages/Home'
+import Settori from './pages/Settori'
+import Contatti from './pages/Contatti'
+
+// Azienda
+import AziendaIndex from './pages/azienda/index'
+import PuntiDiForza from './pages/azienda/PuntiDiForza'
+import Network from './pages/azienda/Network'
+
+// Prodotti
+import ProdottiIndex from './pages/prodotti/index'
+import SensoriLivelloCarburante from './pages/prodotti/SensoriLivelloCarburante'
+import CablaggiElettrici from './pages/prodotti/CablaggiElettrici'
+import QuadriElettrici from './pages/prodotti/QuadriElettrici'
+import SondeTemperatura from './pages/prodotti/SondeTemperatura'
+
+// Qualità
+import QualitaIndex from './pages/qualita/index'
+import Codesign from './pages/qualita/Codesign'
+import Tecnologia from './pages/qualita/Tecnologia'
+import Certificazioni from './pages/qualita/Certificazioni'
+import Brevetti from './pages/qualita/Brevetti'
+import Riconoscimenti from './pages/qualita/Riconoscimenti'
+
+// Servizi
+import ServiziIndex from './pages/servizi/index'
+import Progettazione from './pages/servizi/Progettazione'
+import Produzione from './pages/servizi/Produzione'
+
+// Case History
+import CaseHistoryIndex from './pages/case-history/index'
+import CaseHistorySensori from './pages/case-history/SensoriLivelloCarburante'
+import CaseHistoryCablaggi from './pages/case-history/CablaggiElettrici'
+import CaseHistoryQuadri from './pages/case-history/QuadriElettrici'
+import ArticleDetail from './pages/case-history/ArticleDetail'
+
+// Sostenibilità
+import SostenibilitaIndex from './pages/sostenibilita/index'
+import EtichettaturaAmbientale from './pages/sostenibilita/EtichettaturaAmbientale'
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
-      <Header />
-
-      <main>
-        {/* Hero - fullscreen */}
-        <Hero />
-
-        {/* Section 1 - Testo grande su sfondo nero */}
-        <Section dark={true}>
-          <TextBlock
-            eyebrow="Placeholder"
-            title="Titolo sezione principale da personalizzare"
-            description="Descrizione della sezione. Questo testo verrà sostituito con i tuoi contenuti."
-          />
-        </Section>
-
-        {/* Section 2 - Sfondo chiaro beige */}
-        <Section dark={false}>
-          <TextBlock
-            eyebrow="Placeholder"
-            title="Sezione con sfondo chiaro"
-            description="Layout alternativo con sfondo beige tipico di Anduril."
-            align="center"
-          />
-          <Grid cols={3} className="mt-16">
-            <Card
-              title="Card 1"
-              description="Placeholder per contenuto"
-              image={true}
-              dark={false}
-            />
-            <Card
-              title="Card 2"
-              description="Placeholder per contenuto"
-              image={true}
-              dark={false}
-            />
-            <Card
-              title="Card 3"
-              description="Placeholder per contenuto"
-              image={true}
-              dark={false}
-            />
-          </Grid>
-        </Section>
-
-        {/* Section 3 - Grid 2 colonne sfondo nero */}
-        <Section dark={true}>
-          <Grid cols={2} gap="gap-16">
-            <TextBlock
-              eyebrow="Placeholder"
-              title="Layout a due colonne"
-              description="Testo a sinistra, contenuto a destra. Modello flessibile per vari usi."
-            />
-            <div className="flex flex-col justify-center">
-              <div className="space-y-6">
-                <div className="border-b border-white/10 pb-6">
-                  <h4 className="text-white text-xl mb-2">Item 1</h4>
-                  <p className="text-white/50">Descrizione placeholder</p>
-                </div>
-                <div className="border-b border-white/10 pb-6">
-                  <h4 className="text-white text-xl mb-2">Item 2</h4>
-                  <p className="text-white/50">Descrizione placeholder</p>
-                </div>
-                <div className="border-b border-white/10 pb-6">
-                  <h4 className="text-white text-xl mb-2">Item 3</h4>
-                  <p className="text-white/50">Descrizione placeholder</p>
-                </div>
-              </div>
-            </div>
-          </Grid>
-        </Section>
-
-        {/* Section 4 - Cards su sfondo nero */}
-        <Section dark={true}>
-          <TextBlock
-            eyebrow="Placeholder"
-            title="Griglia di cards"
-            description="Sezione con cards per prodotti, servizi o features."
-          />
-          <Grid cols={3} className="mt-16">
-            <Card title="Card A" description="Placeholder" image={true} dark={true} />
-            <Card title="Card B" description="Placeholder" image={true} dark={true} />
-            <Card title="Card C" description="Placeholder" image={true} dark={true} />
-          </Grid>
-        </Section>
-
-        {/* Section 5 - CTA finale */}
-        <Section dark={true} className="text-center">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-light text-white mb-6">
-              Call to Action
-            </h2>
-            <p className="text-white/60 text-lg mb-10">
-              Testo finale prima del footer. Invito all'azione per i visitatori.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">Primary Action</button>
-              <button className="btn-secondary">Secondary Action</button>
-            </div>
-          </div>
-        </Section>
-      </main>
-
-      <Footer />
-    </div>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/azienda" element={<AziendaIndex />} />
+        <Route path="/azienda/punti-di-forza" element={<PuntiDiForza />} />
+        <Route path="/azienda/network" element={<Network />} />
+        <Route path="/prodotti" element={<ProdottiIndex />} />
+        <Route path="/prodotti/sensori-livello-carburante" element={<SensoriLivelloCarburante />} />
+        <Route path="/prodotti/cablaggi-elettrici" element={<CablaggiElettrici />} />
+        <Route path="/prodotti/quadri-elettrici" element={<QuadriElettrici />} />
+        <Route path="/prodotti/sonde-temperatura" element={<SondeTemperatura />} />
+        <Route path="/settori" element={<Settori />} />
+        <Route path="/qualita" element={<QualitaIndex />} />
+        <Route path="/qualita/codesign" element={<Codesign />} />
+        <Route path="/qualita/tecnologia" element={<Tecnologia />} />
+        <Route path="/qualita/certificazioni" element={<Certificazioni />} />
+        <Route path="/qualita/brevetti" element={<Brevetti />} />
+        <Route path="/qualita/riconoscimenti" element={<Riconoscimenti />} />
+        <Route path="/servizi" element={<ServiziIndex />} />
+        <Route path="/servizi/progettazione" element={<Progettazione />} />
+        <Route path="/servizi/produzione" element={<Produzione />} />
+        <Route path="/case-history" element={<CaseHistoryIndex />} />
+        <Route path="/case-history/sensori-livello-carburante" element={<CaseHistorySensori />} />
+        <Route path="/case-history/cablaggi-elettrici" element={<CaseHistoryCablaggi />} />
+        <Route path="/case-history/quadri-elettrici" element={<CaseHistoryQuadri />} />
+        <Route path="/case-history/:category/:slug" element={<ArticleDetail />} />
+        <Route path="/sostenibilita" element={<SostenibilitaIndex />} />
+        <Route path="/sostenibilita/etichettatura-ambientale" element={<EtichettaturaAmbientale />} />
+        <Route path="/contatti" element={<Contatti />} />
+      </Route>
+    </Routes>
   )
 }
 

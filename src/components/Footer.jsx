@@ -1,60 +1,72 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10">
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          {/* Logo column */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
-            <a href="#" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-white flex items-center justify-center">
-                <span className="text-black font-bold text-lg">A</span>
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Company info */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-white flex items-center justify-center">
+                <span className="text-black font-bold text-xl">M</span>
               </div>
-              <span className="text-white font-semibold text-sm tracking-widest uppercase">
-                Anduril
+              <span className="text-white font-semibold text-lg tracking-tight">
+                MONT.EL
               </span>
-            </a>
-            <p className="text-white/40 text-sm max-w-xs">
-              Building the software-defined defense systems of the future.
-            </p>
+            </Link>
+            <div className="text-white/50 text-sm space-y-1">
+              <p className="text-white">Mont.El Apparecchiature Elettroelettroniche S.r.l.</p>
+              <p>Via Mazzini, 31/B</p>
+              <p>25057 Sale Marasino (BS) – Italia</p>
+              <p className="pt-2">Tel: +39 030 986300</p>
+              <p>Email: info@montel.it</p>
+              <p className="pt-2">P.IVA: 10695790153</p>
+            </div>
           </div>
 
-          {/* Link columns */}
+          {/* Quick links */}
           <div>
-            <h4 className="text-white text-sm font-medium uppercase tracking-wider mb-4">Products</h4>
+            <h4 className="text-white text-sm font-medium uppercase tracking-wider mb-4">
+              Navigazione
+            </h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Lattice</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Ghost</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Anvil</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Dive</a></li>
+              <li><Link to="/azienda" className="text-white/50 text-sm hover:text-white transition-colors">Azienda</Link></li>
+              <li><Link to="/prodotti" className="text-white/50 text-sm hover:text-white transition-colors">Prodotti</Link></li>
+              <li><Link to="/settori" className="text-white/50 text-sm hover:text-white transition-colors">Settori di applicazione</Link></li>
+              <li><Link to="/qualita" className="text-white/50 text-sm hover:text-white transition-colors">Qualità</Link></li>
+              <li><Link to="/servizi" className="text-white/50 text-sm hover:text-white transition-colors">Servizi</Link></li>
+              <li><Link to="/case-history" className="text-white/50 text-sm hover:text-white transition-colors">Case history</Link></li>
+              <li><Link to="/contatti" className="text-white/50 text-sm hover:text-white transition-colors">Contatti</Link></li>
             </ul>
           </div>
 
+          {/* Products */}
           <div>
-            <h4 className="text-white text-sm font-medium uppercase tracking-wider mb-4">Company</h4>
+            <h4 className="text-white text-sm font-medium uppercase tracking-wider mb-4">
+              Prodotti
+            </h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">News</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/prodotti/sensori-livello-carburante" className="text-white/50 text-sm hover:text-white transition-colors">Sensori di livello carburante</Link></li>
+              <li><Link to="/prodotti/cablaggi-elettrici" className="text-white/50 text-sm hover:text-white transition-colors">Cablaggi elettrici</Link></li>
+              <li><Link to="/prodotti/quadri-elettrici" className="text-white/50 text-sm hover:text-white transition-colors">Quadri elettrici</Link></li>
+              <li><Link to="/prodotti/sonde-temperatura" className="text-white/50 text-sm hover:text-white transition-colors">Sonde di temperatura</Link></li>
             </ul>
           </div>
 
+          {/* Legal */}
           <div>
-            <h4 className="text-white text-sm font-medium uppercase tracking-wider mb-4">Resources</h4>
+            <h4 className="text-white text-sm font-medium uppercase tracking-wider mb-4">
+              Documentazione
+            </h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Press</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Blog</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white text-sm font-medium uppercase tracking-wider mb-4">Legal</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Privacy</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Terms</a></li>
-              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Security</a></li>
+              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Cookie Policy</a></li>
+              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Privacy / GDPR</a></li>
+              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Condizioni generali di acquisto</a></li>
+              <li><a href="#" className="text-white/50 text-sm hover:text-white transition-colors">Condizioni generali di fornitura</a></li>
+              <li><Link to="/sostenibilita/etichettatura-ambientale" className="text-white/50 text-sm hover:text-white transition-colors">Etichettatura ambientale</Link></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer" className="text-white/50 text-sm hover:text-white transition-colors">Whistleblowing</a></li>
             </ul>
           </div>
         </div>
@@ -62,19 +74,15 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/30 text-sm">
-            © 2024 Anduril Industries, Inc. All rights reserved.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-white/30 text-sm text-center md:text-left">
+            <p>© {new Date().getFullYear()} Mont.El Apparecchiature Elettroelettroniche S.r.l. Tutti i diritti riservati.</p>
+            <p className="text-xs mt-1">C.F./P.IVA 10695790153 | REA BS 351131 | Capitale sociale € 720.000,00</p>
+          </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-white/30 hover:text-white transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <a href="#" className="text-white/30 hover:text-white transition-colors">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
             <a href="#" className="text-white/30 hover:text-white transition-colors">
