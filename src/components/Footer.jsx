@@ -1,7 +1,26 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import logoImg from '../assets/cab-3/cab-3-1.webp'
 
 export default function Footer() {
+  // Scroll animation observer for footer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const elements = document.querySelectorAll('.footer-animate')
+    elements.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
   const currentYear = new Date().getFullYear()
 
   const footerLinks = {
@@ -31,8 +50,8 @@ export default function Footer() {
       <div className="container py-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Logo & Info */}
-          <div className="lg:col-span-4">
-            <Link to="/" className="inline-block mb-8">
+          <div className="lg:col-span-4 footer-animate animate-on-scroll">
+            <Link to="/" className="inline-block mb-8 hover:opacity-80 transition-opacity duration-300">
               <img src={logoImg} alt="Mont.El" className="h-10 w-auto" />
             </Link>
             <p className="text-body text-muted mb-8 max-w-sm">
@@ -51,14 +70,14 @@ export default function Footer() {
           <div className="lg:col-span-8">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-16">
               {/* Azienda */}
-              <div>
+              <div className="footer-animate animate-on-scroll delay-1">
                 <h4 className="text-caption text-white mb-6">Azienda</h4>
                 <ul className="space-y-4">
                   {footerLinks.azienda.map((link, i) => (
                     <li key={i}>
                       <Link
                         to={link.path}
-                        className="text-sm text-muted hover:text-white transition-colors duration-300"
+                        className="text-sm text-muted hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                       >
                         {link.label}
                       </Link>
@@ -68,14 +87,14 @@ export default function Footer() {
               </div>
 
               {/* Prodotti */}
-              <div>
+              <div className="footer-animate animate-on-scroll delay-2">
                 <h4 className="text-caption text-white mb-6">Prodotti</h4>
                 <ul className="space-y-4">
                   {footerLinks.prodotti.map((link, i) => (
                     <li key={i}>
                       <Link
                         to={link.path}
-                        className="text-sm text-muted hover:text-white transition-colors duration-300"
+                        className="text-sm text-muted hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                       >
                         {link.label}
                       </Link>
@@ -85,14 +104,14 @@ export default function Footer() {
               </div>
 
               {/* Settori */}
-              <div>
+              <div className="footer-animate animate-on-scroll delay-3">
                 <h4 className="text-caption text-white mb-6">Settori</h4>
                 <ul className="space-y-4">
                   {footerLinks.settori.map((link, i) => (
                     <li key={i}>
                       <Link
                         to={link.path}
-                        className="text-sm text-muted hover:text-white transition-colors duration-300"
+                        className="text-sm text-muted hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                       >
                         {link.label}
                       </Link>
@@ -123,7 +142,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-white transition-colors"
+              className="text-muted hover:text-white hover:scale-110 inline-block transition-all duration-300"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
