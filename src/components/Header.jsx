@@ -5,15 +5,8 @@ import { Link, useLocation } from 'react-router-dom'
 import logoImg from '../assets/cab-3/cab-3-1.webp'
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 100)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   useEffect(() => {
     setMenuOpen(false)
@@ -36,16 +29,12 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-black' : 'bg-transparent'
-        }`}
-      >
-        <div className="container">
-          <div className="flex items-center justify-between h-20 lg:h-24">
+      <header className="fixed top-0 left-0 right-0 z-50 h-20 lg:h-24 bg-black/95 backdrop-blur-sm">
+        <div className="container h-full">
+          <div className="flex items-center justify-between h-full">
             {/* Logo */}
             <Link to="/" className="relative z-50 flex items-center gap-3">
-              <img src={logoImg} alt="Mont.El" title="Mont.El - Electronic Wiring Equipment" width="120" height="40" className="h-8 lg:h-10 w-auto" />
+              <img src={logoImg} alt="Mont.El" title="Mont.El - Electronic Wiring Equipment" width="120" height="40" className="h-10 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
